@@ -11,8 +11,4 @@ public class Dragon : IEnemy
     {
         Debug.Log("Raaaar!!!");
     }
-    
-    public class Factory : PlaceholderFactory<Dragon> //Можно ли это прописать где-то 1 раз?
-    {
-    }
 }

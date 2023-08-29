@@ -11,8 +11,4 @@ public class Murloc : IEnemy
     {
         Debug.Log("Mrglwglwlg!");
     }
-    
-    public class Factory : PlaceholderFactory<Murloc> //Можно ли это прописать где-то 1 раз?
-    {
-    }
 }
