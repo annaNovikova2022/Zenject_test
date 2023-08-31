@@ -1,13 +1,15 @@
 using UnityEngine;
 using Zenject;
 
-public class PoolInstaller : MonoInstaller<PoolInstaller>
+public class ObjectPoolInstaller : MonoInstaller
 {
     public GameObject FooPrefab;
 
     public override void InstallBindings()
     {
-        Container.BindMemoryPool<Foo, Foo.Pool>()
+        Container.Bind<PoolObject>().AsSingle();
+
+        Container.BindMemoryPool<CubeObject, CubeObject.Pool>()
             .WithInitialSize(2)
             .FromComponentInNewPrefab(FooPrefab)
             .UnderTransformGroup("Foos");

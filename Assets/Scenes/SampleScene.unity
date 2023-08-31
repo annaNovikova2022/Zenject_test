@@ -265,13 +265,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 176162987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2a193db99bfda49bb33d587a200255, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e38f5242a1b816479b836b9b61a8203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerViewPrefab: {fileID: 5035587143286333585, guid: 58f943b75bb1ac145ae4eee945b5fa0e, type: 3}
-  _playerConfig: {fileID: 11400000, guid: 6fa018d539264f6449445844cc36c40a, type: 2}
-  mobViewPrefab: {fileID: 3252912718039984300, guid: 25cfcdcf724cbc842bf6487d372fe211, type: 3}
-  _mobConfig: {fileID: 11400000, guid: 86709139e65bb4646bf3dcba9c9b5523, type: 2}
+  FooPrefab: {fileID: 2361891132191780521, guid: f6e41000cb358cc488badefeeb997c9e, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
