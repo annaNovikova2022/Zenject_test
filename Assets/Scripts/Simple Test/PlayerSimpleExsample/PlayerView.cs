@@ -12,8 +12,6 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    public Transform Transform => transform;
-
     private int _hp;
 
     [Inject]
