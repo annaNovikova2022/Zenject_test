@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace Project
 {
-    public class Dragon : MonoBehaviour, IEnemy
+    public class Dragon : Enemy
     {
-        private IEnemy _enemyImplementation;
-
-        public void WriteMessage()
+        public override void WriteMessage()
         {
             Debug.Log("Raaar!");
         }
+        
+        
     }
 }

@@ -4,10 +4,7 @@ using Zenject;
 public class TestInstaller : MonoInstaller
 {
     [SerializeField] private PlayerView playerViewPrefab;
-    [SerializeField] private PlayerConfig _playerConfig;
-        
     [SerializeField] private MobView mobViewPrefab;
-    [SerializeField] private MobConfig _mobConfig;
     
     public override void InstallBindings()
     {
@@ -18,17 +15,28 @@ public class TestInstaller : MonoInstaller
     private void BindPlayer()
     {
         Container.Bind<PlayerConfig>()
-            .FromInstance(_playerConfig);
-        var playerView = Container.InstantiatePrefabForComponent<PlayerView>(playerViewPrefab, new RectTransform());
-        Container.BindInterfacesAndSelfTo<PlayerView>()
-            .FromInstance(playerView)
+            .FromScriptableObjectResource("PlayerConfig")
             .AsSingle();
+        
+       // var playerView = Container.InstantiatePrefabForComponent<PlayerView>(playerViewPrefab, new RectTransform());
+       //Container.BindInterfacesAndSelfTo<PlayerView>()
+        //    .FromInstance(playerView)
+        //    .AsSingle();
+
+        Container.BindInterfacesTo<PlayerSpawner>()
+            .AsSingle();
+        Container.BindFactory<PlayerController, PlayerController.Factory>()
+            .FromComponentInNewPrefab(playerViewPrefab);
+
+        
     }
     
     private void BindMob()
     {
-        Container.Bind<MobConfig>().FromInstance(_mobConfig);
-        
+        Container.Bind<MobConfig>()
+            .FromScriptableObjectResource("MobConfig")
+            .AsSingle();
+       
         Container.BindInterfacesTo<MobSpawner>()
             .AsSingle();
         Container.BindFactory<Mob, Mob.Factory>()

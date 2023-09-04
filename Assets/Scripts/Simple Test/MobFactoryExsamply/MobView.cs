@@ -11,9 +11,6 @@ public class MobView : MonoBehaviour
             _hp = value;
         }
     }
-
-    public Transform Transform => transform;
-
     private int _hp;
 
     [Inject]
@@ -21,5 +18,6 @@ public class MobView : MonoBehaviour
     {
         HP = mobConfig.HP;
         Debug.Log("Mob created with " + HP + " HP");
+        gameObject.transform.position = new Vector3(Random.Range(-10.0f, 10.0f),Random.Range(-10.0f, 10.0f),Random.Range(-10.0f, 10.0f));
     }
 }

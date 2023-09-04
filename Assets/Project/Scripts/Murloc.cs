@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Project
 {
-    public class Murloc : MonoBehaviour, IEnemy
+    public class Murloc : Enemy
     {
-        private IEnemy _enemyImplementation;
-
-        public void WriteMessage()
+        public override void WriteMessage()
         {
             Debug.Log("Mrgmrlgr!");
         }
